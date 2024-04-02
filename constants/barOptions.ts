@@ -30,6 +30,9 @@ export const barOptions: EChartsOption = {
       show: false,
     },
   },
+  tooltip:{
+    trigger: 'item',
+  },
   series: [
     {
       name: "Customers",

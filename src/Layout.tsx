@@ -1,13 +1,14 @@
-import { MailOutlined, ProductOutlined, MoneyCollectOutlined, SettingOutlined, UserOutlined } from "@ant-design/icons";
 import { ConfigProvider } from "antd";
-import { ReactNode } from "react";
 import { Link, Outlet } from "react-router-dom";
+import { MenuItem, navBarLinks } from "../constants";
 
 const Layout = () => {
   return (
     <ConfigProvider>
-      <div className="grid md:grid-cols-[250px_1fr] bg-light h-screen ">
-        <SideNavbar />
+      <div className="grid md:grid-cols-[250px_1fr] bg-light h-screen">
+        <div className="hidden md:block h-full">
+          <SideNavbar />
+        </div>
         <Outlet />
       </div>
     </ConfigProvider>
@@ -16,62 +17,30 @@ const Layout = () => {
 
 export default Layout;
 
-type MenuItem = {
-  key: string;
-  label: string;
-  icon?: ReactNode;
-};
-
-function SideNavbar() {
-  const items: MenuItem[] = [
-    {
-      key: "/",
-      label: "Dashboard",
-      icon: <SettingOutlined />,
-    },
-    {
-      key: "/products",
-      label: "Products",
-      icon: <ProductOutlined />,
-    },
-    {
-      key: "/customers",
-      label: "Customers",
-      icon: <UserOutlined />,
-    },
-    {
-      key: "/income",
-      label: "Income",
-      icon: <MoneyCollectOutlined />,
-    },
-    {
-      key: "/promote",
-      label: "Promote",
-      icon: <MailOutlined />,
-    },
-  ];
-
+export function SideNavbar() {
   return (
-    <aside className="bg-accent text-white md:block hidden">
+    <aside className="bg-accent text-white h-full">
       <Link
         to="/"
-        className="text-2xl font-semibold flex items-center gap-2 p-6"
+        className="text-2xl font-semibold flex items-center gap-2 p-6 mb-6"
       >
         <img src="/hexagon.svg" className="invert" alt="hexagon-icon" />
         Dashboard
       </Link>
-      <Menu items={items} />
+      <Menu items={navBarLinks} />
     </aside>
   );
 }
 
-function Menu({ items }: { items: MenuItem[] }) {
+type MenuProps = { items: MenuItem[] };
+
+function Menu({ items }: MenuProps) {
   if (!items) {
     return null;
   }
   return (
     <nav>
-      <ul className="space-y-2">
+      <ul className="space-y-6">
         {items.map((item) => {
           if (!item) {
             return null;
@@ -79,13 +48,12 @@ function Menu({ items }: { items: MenuItem[] }) {
           return (
             <li key={item.key}>
               <Link
-                className=" px-6 py-2 hover:bg-light hover:text-accent transition duration-300 flex items-center gap-3"
+                className=" px-6 py-2 hover:bg-light focus:bg-light focus:text-accent hover:text-accent transition duration-300 flex items-center gap-3"
                 to={item.key}
               >
                 {item.icon}
                 {item.label}
               </Link>
-              
             </li>
           );
         })}

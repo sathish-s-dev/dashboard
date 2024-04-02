@@ -1,11 +1,10 @@
 import { EChartsOption } from "echarts";
 
-
-export const pieOption: EChartsOption = {
+export const pieOptions: EChartsOption = {
   color: ["#6B42E9", "#F2399A", "#F1EFFC"],
   tooltip: {
     trigger: "item",
-    align: "right",
+    align: "center",
   },
 
   backgroundColor: "#FDFDFF",
