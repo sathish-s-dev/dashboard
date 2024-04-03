@@ -10,16 +10,33 @@ import { DataType } from "../src/components/dashboard/TableSection";
 
 export const stats = [
   {
-    image: "/balance.png",
-  },
-  {
     image: "/doller.png",
+    title: "Earning",
+    description: "this month",  
+    price: "$ 198k",
+    value: "↑ 38.5%",
   },
   {
     image: "/note.png",
+    title: "Orders",
+    description: "this month",
+    price: "$ 2.4k",
+    value: "↓ 2%",
   },
   {
+    image: "/balance.png",
+    title: "Balance",
+    description: "this month",
+    price: "$ 198k",
+    value: "↓ 2%",
+  },
+
+  {
     image: "/sales.png",
+    title: "Total Sales",
+    description: "this week",
+    price: "$ 198k",
+    value: "↑ 11%",
   },
 ];
 
@@ -58,7 +75,6 @@ export const navBarLinks: MenuItem[] = [
     icon: <MailOutlined />,
   },
 ];
-
 
 export const productData: DataType[] = [
   {

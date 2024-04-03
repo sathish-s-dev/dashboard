@@ -1,17 +1,17 @@
 import { Input, Drawer } from "antd";
 import { CompressOutlined, MenuOutlined } from "@ant-design/icons";
-import { SideNavbar } from "../Layout";
 import { useState } from "react";
+import { SideNavbar } from "./SideNavBar";
 
 export function TopSection() {
   const [collapsed, setCollapsed] = useState(false);
   return (
-    <div className="w-full flex justify-between items-center gap-4 top-0 backdrop-blur-lg z-10">
+    <div className="w-full flex justify-between items-center gap-4 top-0 backdrop-blur-lg z-10 ">
       <button
         onClick={() => {
           setCollapsed(!collapsed);
         }}
-        className="ring-none ring-slate-300 "
+        className="ring-none ring-slate-300 block md:hidden"
       >
         <MenuOutlined />
       </button>

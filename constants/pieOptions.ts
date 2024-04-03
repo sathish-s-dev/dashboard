@@ -6,7 +6,6 @@ export const pieOptions: EChartsOption = {
     trigger: "item",
     align: "center",
   },
-
   backgroundColor: "#FDFDFF",
   series: [
     {
