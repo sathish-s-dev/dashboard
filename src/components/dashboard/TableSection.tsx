@@ -67,7 +67,7 @@ export function TableSection() {
 
 
   return (
-    <div className="w-full bg-white pb-24 rounded-xl space-y-6">
+    <div className="w-full bg-white pb-24 rounded-xl space-y-6 mt-24 z-10">
       <div className="flex gap-4 justify-between p-6 pb-0">
         <SectionHeading>Product Sell</SectionHeading>
         <SelectComponent

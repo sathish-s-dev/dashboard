@@ -22,8 +22,8 @@ export function StatCard({
       />
       <div className="flex flex-col gap-[2px]">
         <h5 className="text-xs text-gray-400">{title}</h5>
-        <h3 className="text-2xl font-bold">{price}</h3>
-        <p className="text-[10px] flex items-center gap-1 font-semibold text-slate-600">
+        <h3 className="text-lg sm:text-2xl font-bold">{price}</h3>
+        <p className="text-[9px] sm:text-xs flex items-center gap-[2px] font-semibold text-slate-600 whitespace-nowrap">
           <span
             className={value.includes("↓") ? "text-red-500" : "text-green-500"}
           >

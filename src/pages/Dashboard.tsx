@@ -5,7 +5,7 @@ import { TableSection } from "../components/dashboard/TableSection";
 
 const Dashboard = () => {
   return (
-    <main className="bg-light p-6 md:px-12 py-6 space-y-8 h-screen overflow-y-auto no-scrollbar relative">
+    <main className="bg-light p-6 md:px-12 py-6 space-y-6 md:space-y-8 h-screen overflow-y-auto no-scrollbar relative">
       <TopSection />
       <StatCardSection />
       <ChartsSection />
